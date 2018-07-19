@@ -1,6 +1,7 @@
-.js-results {
-	display: none;
-}
+
 .search-title, .results, .search-box {
 	text-align: center;
+}
+.hidden {
+	display: none;
 }
