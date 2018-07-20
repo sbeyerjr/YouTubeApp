@@ -2,7 +2,7 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const YOUTUBE_URL = 'https://www.youtube.com/watch?v=';
 const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/channel/';
 
-
+// getting data from the API
 function getDataFromApi(searchTerm, callback) {
   const query = {
     q: searchTerm,
@@ -13,6 +13,8 @@ function getDataFromApi(searchTerm, callback) {
   $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
   return console.log(searchTerm);
 }
+
+//append this html and API data to the document
 
 function renderResult(result) {
 	let videoId = result.id.videoId;
@@ -35,6 +37,8 @@ function displayYouTubeSearchData(data) {
   const results = data.items.map((item, index) => renderResult(item));
   $('.js-search-results').html(results);
 }
+
+//when the submit button is clicked, send the result to API
 
 function watchSubmitButton() {
   $('.js-search-form').submit(event => {
