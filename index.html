@@ -6,11 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" type="text/css" href="grid.css">
+	<link href="dist/lity.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
 	<main role="main">
-		<section role="region">
+		<section role="region" class="top-search">
 			<div class="row">
 				<div class="col-12 search-title">
 				<h1>Search Videos</h1>
@@ -28,11 +29,10 @@
 		</section>
 		<section role="region">
 			<div class="row">
-				<div class="col-12 js-results">
+				<div class="col-12 js-results hidden">
 				<h2>Your Results</h2>
 			</div>
 			</div>
-			<div class="row">
 			<div class="js-search-results"></div>
 			</div>
 		</section>
@@ -42,5 +42,6 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 <script type="text/javascript" src="main.js"></script>
+<script src="dist/lity.js"></script>
 </body>
 </html>

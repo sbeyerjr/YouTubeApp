@@ -31,14 +31,34 @@ function getDataFromApi(searchTerm, callback) {
   return console.log(searchTerm);
 }
 
+// function renderResult(result) {
+// 	let videoId = result.id.videoId;
+//   return `<div class="col-4">
+//   <img src='${result.snippet.thumbnails.medium.url}' alt=''></div>
+//   			<div class="col-8">
+//   			<div class="result-box">
+//   					<div class="title"><h2>${result.snippet.title}</h2></div>
+//   					<a href='${YOUTUBE_URL}${videoId}' target='_blank'>
+//   					</a>
+//   			</div>
+//   			</div>`;
+// }
+
 function renderResult(result) {
 	let videoId = result.id.videoId;
-  return `<div class="col-4">
-  					<p>${result.snippet.title}</p>
-  					<a href='${YOUTUBE_URL}${videoId}' target='_blank'>
-  						<img src='${result.snippet.thumbnails.medium.url}' alt=''>
-  					</a>
-  				</div>`;
+  return `<div class="row result-box">
+  			<div class="col-4">
+  				<a href="${YOUTUBE_URL}${videoId}" data-lightbox="image-1" data-lity><img src='${result.snippet.thumbnails.medium.url}' alt=''></a>
+  			</div>
+  			<div class="col-8">
+  				<div class="title"><h2>${result.snippet.title}</h2></div>
+  				<div class="description-box">${result.snippet.description}</div>
+  				<div class="watch">
+  				<a class="watch-button" href="${YOUTUBE_URL}${videoId}" data-lity>Watch Video</a>
+  				</div>
+  			</div>
+  		</div>
+  		  `;
 }
 
 function displayYouTubeSearchData(data) {
@@ -54,7 +74,10 @@ function watchSubmitButton() {
     // clear out the input
     queryTarget.val("");
     getDataFromApi(query, displayYouTubeSearchData);
+
   });
 }
+
+
 
 $(watchSubmitButton);
