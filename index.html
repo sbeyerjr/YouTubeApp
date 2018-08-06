@@ -19,9 +19,9 @@
 			</div>
 			<div class="row">
 				<div class="col-12 search-box">
-				<form action="#" class="js-search-form">
-					<label for="query"></label>
-					<input type="text" class="js-query">
+				<form action="#" class="js-search-form" name="search-videos">
+					<label for="js-query">Enter a search term: </label>
+					<input type="text" id="js-query" required>
 					<button type="submit">Search</button>
 				</form>
 			</div>
@@ -29,16 +29,12 @@
 		</section>
 		<section role="region">
 			<div class="row">
-				<div class="col-12 js-results hidden">
+				<div class="col-12 js-results hidden" aria-live="assertive">
 				<h2>Your Results</h2>
 			</div>
 			</div>
 			<div class="js-search-results"></div>
 			</div>
-			<div class="row">
-				<div class="col-12">
-					<button class="more-button hidden">More Videos</button>
-				</div>
 			</div>
 			</div>
 		</section>

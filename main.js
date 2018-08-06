@@ -20,7 +20,7 @@ function renderResult(result) {
 	let videoId = result.id.videoId;
   return `<div class="row result-box">
   			<div class="col-4">
-  				<a href="${YOUTUBE_URL}${videoId}" data-lightbox="image-1" data-lity><img src='${result.snippet.thumbnails.medium.url}' alt=''></a>
+  				<a href="${YOUTUBE_URL}${videoId}" data-lightbox="image-1" data-lity><img src='${result.snippet.thumbnails.medium.url}' alt="Watch Video in Lightbox ${result.snippet.title}"></a>
   			</div>
   			<div class="col-8">
   				<div class="title"><h2>${result.snippet.title}</h2></div>
@@ -44,7 +44,7 @@ function watchSubmitButton() {
   $('.js-search-form').submit(event => {
     event.preventDefault();
     $('.more-button').removeClass('hidden');
-    const queryTarget = $(event.currentTarget).find('.js-query');
+    const queryTarget = $(event.currentTarget).find('#js-query');
     const query = queryTarget.val();
     // clear out the input
     queryTarget.val("");
